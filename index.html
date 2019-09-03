@@ -72,30 +72,67 @@
   <div class="contents col-md-9">
 
 <p><img src="reference/figures/rmangal.png" width="130" align="right"></p>
-<div id="rmangal" class="section level1">
+<div id="rmangal---an-r-client-for-the-mangal-database" class="section level1">
 <div class="page-header"><h1 class="hasAnchor">
-<a href="#rmangal" class="anchor"></a>rmangal 📦</h1></div>
+<a href="#rmangal---an-r-client-for-the-mangal-database" class="anchor"></a>rmangal 📦 - an R Client for the Mangal database</h1></div>
 <p><a href="https://travis-ci.org/mangal-wg/rmangal"><img src="https://travis-ci.org/mangal-wg/rmangal.svg?branch=master" alt="Travis-CI Build Status"></a> <a href="https://ci.appveyor.com/project/KevCaz/rmangal"><img src="https://ci.appveyor.com/api/projects/status/mibs2ni969xiqgrd?svg=true" alt="Build status"></a> <a href="https://codecov.io/gh/mangal-wg/rmangal"><img src="https://codecov.io/gh/mangal-wg/rmangal/branch/master/graph/badge.svg" alt="codecov"></a> <a href="https://www.repostatus.org/#active"><img src="https://www.repostatus.org/badges/latest/active.svg" alt="Project Status: Active – The project has reached a stable, usable state and is being actively developed."></a> <a href="http://www.r-pkg.org/badges/version/rmangal"><img src="https://www.r-pkg.org/badges/version/rmangal" alt="CRAN status"></a></p>
-<p>A R package to interact with the ecological interactions database Mangal</p>
-<ul>
-<li>API documentation: <a href="https://mangal.io/doc/api" class="uri">https://mangal.io/doc/api</a>
-</li>
-<li>Data explorer: <a href="https://mangal.io/#/network" class="uri">https://mangal.io/#/network</a>
-</li>
-<li>Package documentation: <a href="https://mangal.io/doc/r" class="uri">https://mangal.io/doc/r</a>
-</li>
-</ul>
+<div id="context" class="section level2">
+<h2 class="hasAnchor">
+<a href="#context" class="anchor"></a>Context</h2>
+<p>Interactions among species is at the heart of ecology. Despite their importance, studying ecological interactions remains difficult due to the lack of standard information and the disparity of formats in which ecological interactions are stored. Historically, ecologists have used matrices to store interactions, which tend to easily decontextualize interactions from fieldwork when metadata is missing. To overcome these limitations, <a href="https://mangal.io/#/">Mangal</a> – a global ecological interactions database – serializes ecological interaction matrices into nodes (e.g. taxon, individuals or population) and edges. Hence the base unit in Mangal is a published ecological network and thus distinct from other initiatives such as <a href="https://www.globalbioticinteractions.org/">Globi</a> (see <a href="https://github.com/ropensci/rglobi">rglobi</a> for an R Client to) that store pairwise interactions.</p>
+<p>For every network, Mangal store a vast array of metadata: from the details of the orginal publication to taxonomic information. Regarding the latter, Mangal store unique taxonomic identifiers such as Encyclopedia of Life (EOL), Catalogue of Life (COL), Global Biodiversity Information Facility (GBIF) and Integrated Taxonomic Information System (ITIS)</p>
+<p><strong>rmangal</strong> is an R client to the Mangal database. As such, it provides various functions to query the data base and retrieve networks that are stored as <code>mgNetwork</code> or <code>mgNetworksCollection</code>. It also provides methods to convert <code>mgNetwork</code> to other object in order to use powerful package to work with networks: <a href="https://igraph.org/r/"><code>igraph</code></a>, <a href="https://github.com/thomasp85/tidygraph"><code>tidygraph</code></a>, and <a href="https://github.com/thomasp85/ggraph"><code>ggraph</code></a>.</p>
+</div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p>So far, the development version can be installed via the <a href="https://cran.r-project.org/web/packages/remotes/index.html">remotes</a> 📦</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"mangal-wg/rmangal"</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(<span class="st">"rmangal"</span>)</a></code></pre></div>
+<p>So far, only the development version is available and can be installed via the <a href="https://cran.r-project.org/web/packages/remotes/index.html">remotes</a> 📦</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"mangal-wg/rmangal"</span>)</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(<span class="st">"rmangal"</span>)</a></code></pre></div>
 </div>
 <div id="how-to-use-rmangal" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-to-use-rmangal" class="anchor"></a>How to use rmangal</h2>
-<p>See the vignettes <a href="https://mangal-wg.github.io/rmangal/articles/rmangal.html">“Get started with rmangal”</a>.</p>
+<p>In order to query the data base, there are <a href="">five <code>search_*()</code> functions</a>, for instance <code><a href="reference/search_datasets.html">search_datasets()</a></code>:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span>mgs &lt;-<span class="st"> </span><span class="kw"><a href="reference/search_datasets.html">search_datasets</a></span>(<span class="st">"lagoon"</span>)</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">Found <span class="dv">2</span> datasets</a></code></pre></div>
+<p>Once this first step achieved networks found can be retrieved with the <code><a href="reference/get_collection.html">get_collection()</a></code> function:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span>mgn &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_collection.html">get_collection</a></span>(mgs)</a></code></pre></div>
+<p>which returns an object <code>mgNetwork</code> if there is one network returned, otherwise an object <code>mgNetworkCollection</code> is returned, which basically is a list of <code>mgNetwork</code> objects:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/class">class</a></span>(mgn)</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">[<span class="dv">1</span>] <span class="st">"mgNetworksCollection"</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">R<span class="op">&gt;</span><span class="st"> </span>mgn</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">A collection of <span class="dv">3</span> networks</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb4-6" data-line-number="6"><span class="op">*</span><span class="st"> </span>Network <span class="co"># from data set #</span></a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"><span class="op">*</span><span class="st"> </span>Description<span class="op">:</span><span class="st"> </span>Dietary matrix of the Huizache–Caimanero lagoon</a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="op">*</span><span class="st"> </span>Includes <span class="dv">189</span> edges and <span class="dv">26</span> nodes</a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"><span class="op">*</span><span class="st"> </span>Current taxonomic IDs coverage <span class="cf">for</span> nodes of this network<span class="op">:</span></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="st">  </span><span class="op">-</span>-&gt;<span class="st"> </span>ITIS<span class="op">:</span><span class="st"> </span><span class="dv">81</span><span class="op">%, BOLD: 81%</span>, EOL<span class="op">:</span><span class="st"> </span><span class="dv">85</span><span class="op">%, COL: 81%</span>, GBIF<span class="op">:</span><span class="st"> </span><span class="dv">0</span><span class="op">%, NCBI: 85%</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="er">*</span><span class="st"> </span>Published <span class="cf">in</span> ref <span class="co"># DOI:10.1016/s0272-7714(02)00410-9</span></a>
+<a class="sourceLine" id="cb4-12" data-line-number="12"></a>
+<a class="sourceLine" id="cb4-13" data-line-number="13"><span class="op">*</span><span class="st"> </span>Network <span class="co"># from data set #</span></a>
+<a class="sourceLine" id="cb4-14" data-line-number="14"><span class="op">*</span><span class="st"> </span>Description<span class="op">:</span><span class="st"> </span>Food web of the Brackish lagoon</a>
+<a class="sourceLine" id="cb4-15" data-line-number="15"><span class="op">*</span><span class="st"> </span>Includes <span class="dv">27</span> edges and <span class="dv">11</span> nodes</a>
+<a class="sourceLine" id="cb4-16" data-line-number="16"><span class="op">*</span><span class="st"> </span>Current taxonomic IDs coverage <span class="cf">for</span> nodes of this network<span class="op">:</span></a>
+<a class="sourceLine" id="cb4-17" data-line-number="17"><span class="st">  </span><span class="op">-</span>-&gt;<span class="st"> </span>ITIS<span class="op">:</span><span class="st"> </span><span class="dv">45</span><span class="op">%, BOLD: 45%</span>, EOL<span class="op">:</span><span class="st"> </span><span class="dv">45</span><span class="op">%, COL: 45%</span>, GBIF<span class="op">:</span><span class="st"> </span><span class="dv">18</span><span class="op">%, NCBI: 45%</span></a>
+<a class="sourceLine" id="cb4-18" data-line-number="18"><span class="er">*</span><span class="st"> </span>Published <span class="cf">in</span> ref <span class="co"># DOI:NA</span></a>
+<a class="sourceLine" id="cb4-19" data-line-number="19"></a>
+<a class="sourceLine" id="cb4-20" data-line-number="20"><span class="op">*</span><span class="st"> </span>Network <span class="co"># from data set #</span></a>
+<a class="sourceLine" id="cb4-21" data-line-number="21"><span class="op">*</span><span class="st"> </span>Description<span class="op">:</span><span class="st"> </span>Food web of the Costal lagoon</a>
+<a class="sourceLine" id="cb4-22" data-line-number="22"><span class="op">*</span><span class="st"> </span>Includes <span class="dv">34</span> edges and <span class="dv">13</span> nodes</a>
+<a class="sourceLine" id="cb4-23" data-line-number="23"><span class="op">*</span><span class="st"> </span>Current taxonomic IDs coverage <span class="cf">for</span> nodes of this network<span class="op">:</span></a>
+<a class="sourceLine" id="cb4-24" data-line-number="24"><span class="st">  </span><span class="op">-</span>-&gt;<span class="st"> </span>ITIS<span class="op">:</span><span class="st"> </span><span class="dv">54</span><span class="op">%, BOLD: 54%</span>, EOL<span class="op">:</span><span class="st"> </span><span class="dv">54</span><span class="op">%, COL: 54%</span>, GBIF<span class="op">:</span><span class="st"> </span><span class="dv">15</span><span class="op">%, NCBI: 54%</span></a>
+<a class="sourceLine" id="cb4-25" data-line-number="25"><span class="er">*</span><span class="st"> </span>Published <span class="cf">in</span> ref <span class="co"># DOI:NA</span></a></code></pre></div>
+<p><a href="https://igraph.org/r/"><code>igraph</code></a> and <a href="https://github.com/thomasp85/tidygraph"><code>tidygraph</code></a> offer powerful features to analyse networks and <strong>rmangal</strong> provides functions to convert <code>mgNetwork</code> to <code>igraph</code> and <code>tbl_graph</code> so that the user can easily benefit from those features.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span>ig &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/igraph/topics/as.igraph">as.igraph</a></span>(mgn[[<span class="dv">1</span>]])</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/class">class</a></span>(ig)</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">[<span class="dv">1</span>] <span class="st">"igraph"</span></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(tidygraph)</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">R<span class="op">&gt;</span><span class="st"> </span>tg &lt;-<span class="st"> </span><span class="kw">as_tbl_graph</span>(mgn[[<span class="dv">1</span>]])</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/class">class</a></span>(tg)</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7">[<span class="dv">1</span>] <span class="st">"tbl_graph"</span> <span class="st">"igraph"</span></a></code></pre></div>
+<p>📖 Note that the vignette <a href="https://mangal-wg.github.io/rmangal/articles/rmangal.html">“Get started with rmangal”</a> will guide the reader through several examples and provide further details about <strong>rmangal</strong> features.</p>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">

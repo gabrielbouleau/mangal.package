@@ -34,7 +34,8 @@
 
 
 <meta property="og:title" content="Retrieve network informations, nodes, edges and references for a given set of Mangal network IDs — get_network_by_id" />
-<meta property="og:description" content="Retrieve network informations, nodes, edges and references for a given set of Mangal network IDs" />
+<meta property="og:description" content="Summarize mgNetwork properties.
+Summarize mgNetworksCollection properties." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -113,7 +114,8 @@
     </div>
 
     <div class="ref-description">
-    <p>Retrieve network informations, nodes, edges and references for a given set of Mangal network IDs</p>
+    <p>Summarize mgNetwork properties.</p>
+<p>Summarize mgNetworksCollection properties.</p>
     </div>
 
     <pre class="usage"><span class='fu'>get_network_by_id</span>(<span class='no'>ids</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
@@ -124,7 +126,13 @@
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)
 
 <span class='co'># S3 method for mgNetworksCollection</span>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)</pre>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/print'>print</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for mgNetwork</span>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/summary'>summary</a></span>(<span class='no'>object</span>, <span class='no'>...</span>)
+
+<span class='co'># S3 method for mgNetworksCollection</span>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/summary'>summary</a></span>(<span class='no'>object</span>, <span class='no'>...</span>)</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -149,16 +157,28 @@
       <th>...</th>
       <td><p>ignored.</p></td>
     </tr>
+    <tr>
+      <th>object</th>
+      <td><p>object of of class <code>mgNetwork</code> or <code>mgNetworksCollection</code>.</p></td>
+    </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a <code>mgNetwork</code> object including:</p><ul>
+    <p>A <code>mgNetwork</code> object includes:</p><ul>
 <li><p>network: a <code>list</code> of all generic information on the network</p></li>
 <li><p>nodes: a <code>data.frame</code> of all nodes with taxonomic information</p></li>
 <li><p>interactions: a <code>data.frame</code> of all ecological interactions, with the attribute used to describe the interaction</p></li>
 <li><p>dataset: <code>list</code> information pertaining to the dataset the network is associated with</p></li>
 <li><p>reference: <code>list</code> information about the original publication</p></li>
+</ul>
+
+<p>A summary method is available return for all <code>mgNetwork</code> object the following network properties:</p><ul>
+<li><p>the number of nodes;</p></li>
+<li><p>the number of edges;</p></li>
+<li><p>the connectance;</p></li>
+<li><p>the linkage density;</p></li>
+<li><p>the degree (in, out an total) and the eigenvector centrality of every nodes.</p></li>
 </ul>
 
     <h2 class="hasAnchor" id="functions"><a class="anchor" href="#functions"></a>Functions</h2>
