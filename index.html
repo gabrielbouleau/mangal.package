@@ -7,8 +7,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mangal Client • rmangal</title>
 <!-- jquery --><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script><!-- Bootstrap --><link href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/flatly/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
-<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- sticky kit --><script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha256-U5ZEeKfGNOja007MMD3YBI0A3OSZOQbeG6z2f2Y0hu8=" crossorigin="anonymous"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/all.min.css" integrity="sha256-nAmazAk6vS34Xqo0BSrTb+abbtFlgsFK7NKSi6o7Y78=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.7.1/css/v4-shims.min.css" integrity="sha256-6qHlizsOWFskGlwVOKuns+D1nB6ssZrHQrNj1wGplHc=" crossorigin="anonymous">
+<!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" integrity="sha256-FiZwavyI2V6+EXO1U+xzLG3IKldpiTFf3153ea9zikQ=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/headroom.min.js" integrity="sha256-DJFC1kqIhelURkuza0AvYal5RxMtpzLjFhsnVIeuk+U=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.9.4/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
 <script src="pkgdown.js"></script><meta property="og:title" content="Mangal Client">
 <meta property="og:description" content="An interface to the Mangal database - a collection of ecological networks. This package includes functions to work with the Mangal RESTFul API methods (&lt;https://mangal.io/doc/api&gt;).">
 <meta name="twitter:card" content="summary">
@@ -38,7 +39,7 @@
       <ul class="nav navbar-nav">
 <li>
   <a href="index.html">
-    <span class="fa fa-home fa-lg"></span>
+    <span class="fas fa fas fa-home fa-lg"></span>
      
   </a>
 </li>
@@ -55,7 +56,7 @@
 <ul class="nav navbar-nav navbar-right">
 <li>
   <a href="https://github.com/mangal-wg/rmangal">
-    <span class="fa fa-github fa-lg"></span>
+    <span class="fab fa fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -68,6 +69,7 @@
 <!--/.navbar -->
 
       
+
       </header><div class="row">
   <div class="contents col-md-9">
 
@@ -79,27 +81,27 @@
 <div id="context" class="section level2">
 <h2 class="hasAnchor">
 <a href="#context" class="anchor"></a>Context</h2>
-<p>Interactions among species is at the heart of ecology. Despite their importance, studying ecological interactions remains difficult due to the lack of standard information and the disparity of formats in which ecological interactions are stored. Historically, ecologists have used matrices to store interactions, which tend to easily decontextualize interactions from fieldwork when metadata is missing. To overcome these limitations, <a href="https://mangal.io/#/">Mangal</a> – a global ecological interactions database – serializes ecological interaction matrices into nodes (e.g. taxon, individuals or population) and edges. Hence the base unit in Mangal is a published ecological network and thus distinct from other initiatives such as <a href="https://www.globalbioticinteractions.org/">Globi</a> (see <a href="https://github.com/ropensci/rglobi">rglobi</a> for an R Client to) that store pairwise interactions.</p>
-<p>For every network, Mangal store a vast array of metadata: from the details of the orginal publication to taxonomic information. Regarding the latter, Mangal store unique taxonomic identifiers such as Encyclopedia of Life (EOL), Catalogue of Life (COL), Global Biodiversity Information Facility (GBIF) and Integrated Taxonomic Information System (ITIS)</p>
-<p><strong>rmangal</strong> is an R client to the Mangal database. As such, it provides various functions to query the data base and retrieve networks that are stored as <code>mgNetwork</code> or <code>mgNetworksCollection</code>. It also provides methods to convert <code>mgNetwork</code> to other object in order to use powerful package to work with networks: <a href="https://igraph.org/r/"><code>igraph</code></a>, <a href="https://github.com/thomasp85/tidygraph"><code>tidygraph</code></a>, and <a href="https://github.com/thomasp85/ggraph"><code>ggraph</code></a>.</p>
+<p><a href="https://mangal.io/#/">Mangal</a> – a global ecological interactions database – serializes ecological interaction matrices into nodes (e.g. taxon, individuals or population) and interactions (i.e. edges). For each network, Mangal offers the opportunity to store study context such as the location, sampling environment, inventory date and informations pertaining to the original publication. For every nodes involved in the ecological networks, Mangal references unique taxonomic identifiers such as Encyclopedia of Life (EOL), Catalogue of Life (COL), Global Biodiversity Information Facility (GBIF) etc. and can extend nodes informations to individual traits.</p>
+<p><strong>rmangal</strong> is an R client to the Mangal database and provides various functions to explore his content through search functions. It offers methods to retrieve networks structured as <code>mgNetwork</code> or <code>mgNetworksCollection</code> S3 objects and methods to convert <code>mgNetwork</code> to other class objects in order to analyze and visualize networks properties: <a href="https://igraph.org/r/"><code>igraph</code></a>, <a href="https://github.com/thomasp85/tidygraph"><code>tidygraph</code></a>, and <a href="https://github.com/thomasp85/ggraph"><code>ggraph</code></a>.</p>
 </div>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>So far, only the development version is available and can be installed via the <a href="https://CRAN.R-project.org/package=remotes">remotes</a> 📦</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span>devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">"mangal-wg/rmangal"</span>)</a>
-<a class="sourceLine" id="cb1-2" data-line-number="2">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(<span class="st">"rmangal"</span>)</a></code></pre></div>
+<a class="sourceLine" id="cb1-2" data-line-number="2">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"rmangal"</span>)</a></code></pre></div>
 </div>
 <div id="how-to-use-rmangal" class="section level2">
 <h2 class="hasAnchor">
-<a href="#how-to-use-rmangal" class="anchor"></a>How to use rmangal</h2>
-<p>In order to query the data base, there are <a href="">five <code>search_*()</code> functions</a>, for instance <code><a href="reference/search_datasets.html">search_datasets()</a></code>:</p>
+<a href="#how-to-use-rmangal" class="anchor"></a>How to use <code>rmangal</code>
+</h2>
+<p>There are <a href="file:///home/steve/Documents/Git/mangal/rmangal/docs/reference/index.html#section-explore-database">five <code>search_*()</code> functions</a> to explore the content of Mangal, for instance <code><a href="reference/search_datasets.html">search_datasets()</a></code>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span>mgs &lt;-<span class="st"> </span><span class="kw"><a href="reference/search_datasets.html">search_datasets</a></span>(<span class="st">"lagoon"</span>)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">Found <span class="dv">2</span> datasets</a></code></pre></div>
-<p>Once this first step achieved networks found can be retrieved with the <code><a href="reference/get_collection.html">get_collection()</a></code> function:</p>
+<p>Once this first step achieved, networks found can be retrieved with the <code><a href="reference/get_collection.html">get_collection()</a></code> function.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span>mgn &lt;-<span class="st"> </span><span class="kw"><a href="reference/get_collection.html">get_collection</a></span>(mgs)</a></code></pre></div>
-<p>which returns an object <code>mgNetwork</code> if there is one network returned, otherwise an object <code>mgNetworkCollection</code> is returned, which basically is a list of <code>mgNetwork</code> objects:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/class">class</a></span>(mgn)</a>
+<p><code><a href="reference/get_collection.html">get_collection()</a></code> returns an object <code>mgNetwork</code> if there is one network returned, otherwise an object <code>mgNetworkCollection</code>, which is a list of <code>mgNetwork</code> objects.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/class.html">class</a></span>(mgn)</a>
 <a class="sourceLine" id="cb4-2" data-line-number="2">[<span class="dv">1</span>] <span class="st">"mgNetworksCollection"</span></a>
 <a class="sourceLine" id="cb4-3" data-line-number="3">R<span class="op">&gt;</span><span class="st"> </span>mgn</a>
 <a class="sourceLine" id="cb4-4" data-line-number="4">A collection of <span class="dv">3</span> networks</a>
@@ -124,15 +126,26 @@
 <a class="sourceLine" id="cb4-23" data-line-number="23"><span class="op">*</span><span class="st"> </span>Current taxonomic IDs coverage <span class="cf">for</span> nodes of this network<span class="op">:</span></a>
 <a class="sourceLine" id="cb4-24" data-line-number="24"><span class="st">  </span><span class="op">-</span>-&gt;<span class="st"> </span>ITIS<span class="op">:</span><span class="st"> </span><span class="dv">54</span><span class="op">%, BOLD: 54%</span>, EOL<span class="op">:</span><span class="st"> </span><span class="dv">54</span><span class="op">%, COL: 54%</span>, GBIF<span class="op">:</span><span class="st"> </span><span class="dv">15</span><span class="op">%, NCBI: 54%</span></a>
 <a class="sourceLine" id="cb4-25" data-line-number="25"><span class="er">*</span><span class="st"> </span>Published <span class="cf">in</span> ref <span class="co"># DOI:NA</span></a></code></pre></div>
-<p><a href="https://igraph.org/r/"><code>igraph</code></a> and <a href="https://github.com/thomasp85/tidygraph"><code>tidygraph</code></a> offer powerful features to analyse networks and <strong>rmangal</strong> provides functions to convert <code>mgNetwork</code> to <code>igraph</code> and <code>tbl_graph</code> so that the user can easily benefit from those features.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span>ig &lt;-<span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/igraph/topics/as.igraph">as.igraph</a></span>(mgn[[<span class="dv">1</span>]])</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/class">class</a></span>(ig)</a>
+<p><a href="https://igraph.org/r/"><code>igraph</code></a> and <a href="https://github.com/thomasp85/tidygraph"><code>tidygraph</code></a> offer powerful features to analyse networks and <strong>rmangal</strong> provides functions to convert <code>mgNetwork</code> to <code>igraph</code> and <code>tbl_graph</code> so that the user can easily benefit from those packages.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span>ig &lt;-<span class="st"> </span><span class="kw"><a href="https://rdrr.io/pkg/igraph/man/as.igraph.html">as.igraph</a></span>(mgn[[<span class="dv">1</span>]])</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/class.html">class</a></span>(ig)</a>
 <a class="sourceLine" id="cb5-3" data-line-number="3">[<span class="dv">1</span>] <span class="st">"igraph"</span></a>
-<a class="sourceLine" id="cb5-4" data-line-number="4">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(tidygraph)</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(tidygraph)</a>
 <a class="sourceLine" id="cb5-5" data-line-number="5">R<span class="op">&gt;</span><span class="st"> </span>tg &lt;-<span class="st"> </span><span class="kw">as_tbl_graph</span>(mgn[[<span class="dv">1</span>]])</a>
-<a class="sourceLine" id="cb5-6" data-line-number="6">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/class">class</a></span>(tg)</a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/class.html">class</a></span>(tg)</a>
 <a class="sourceLine" id="cb5-7" data-line-number="7">[<span class="dv">1</span>] <span class="st">"tbl_graph"</span> <span class="st">"igraph"</span></a></code></pre></div>
 <p>📖 Note that the vignette <a href="https://mangal-wg.github.io/rmangal/articles/rmangal.html">“Get started with rmangal”</a> will guide the reader through several examples and provide further details about <strong>rmangal</strong> features.</p>
+</div>
+<div id="how-to-publish-ecological-networks" class="section level2">
+<h2 class="hasAnchor">
+<a href="#how-to-publish-ecological-networks" class="anchor"></a>How to publish ecological networks</h2>
+<p>We are working on that part. The networks publication process will be facilitated with structured objects and tests suite to maintain data integrity and quality. Any suggestions or advices is welcome, feel free to open issues.</p>
+</div>
+<div id="rmangal-vs-rglobi" class="section level2">
+<h2 class="hasAnchor">
+<a href="#rmangal-vs-rglobi" class="anchor"></a><code>rmangal</code> vs <code>rglobi</code>
+</h2>
+<p>Those interested only in paiwise interactions among taxons may consider using <code>rglobi</code>, an R package that provides an interface to the <a href="https://www.globalbioticinteractions.org/about.html">GloBi infrastructure</a>. GloBi provides open access to aggregated interactions from heterogeneous sources. In contrast, Mangal gives access to the original networks and open the gate to study ecological networks properties (i.e. connectance, degree etc.) along large environmental gradients, which wasn’t possible using the GloBi infrastructure.</p>
 </div>
 <div id="code-of-conduct" class="section level2">
 <h2 class="hasAnchor">
@@ -161,6 +174,12 @@
 </li>
 </ul>
 </div>
+<div class="community">
+<h2>Community</h2>
+<ul class="list-unstyled">
+<li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+</ul>
+</div>
 <div class="citation">
 <h2>Citation</h2>
 <ul class="list-unstyled">
@@ -171,9 +190,9 @@
 <h2>Developers</h2>
 <ul class="list-unstyled">
 <li>
-<a href="https://steveviss.github.io/">Steve Vissault</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-0866-4376" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<a href="https://steveviss.github.io/">Steve Vissault</a> <br><small class="roles"> Author, maintainer </small> <a href="https://orcid.org/0000-0002-0866-4376" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
 <li>
-<a href="https://kevcaz.github.io/">Kevin Cazelles</a> <br><small class="roles"> Author, contributor </small> <a href="https://orcid.org/0000-0001-6619-9874" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID" height="16"></a> </li>
+<a href="https://kevcaz.github.io/">Kevin Cazelles</a> <br><small class="roles"> Author, contributor </small> <a href="https://orcid.org/0000-0001-6619-9874" target="orcid.widget"><img src="https://members.orcid.org/sites/default/files/vector_iD_icon.svg" class="orcid" alt="ORCID"></a> </li>
 <li>
 <a href="https://github.com/gabrielbouleau">Gabriel Bergeron</a> <br><small class="roles"> Author, contributor </small>  </li>
 <li>
@@ -189,17 +208,20 @@
   </div>
 </div>
 
+
       <footer><div class="copyright">
   <p>Developed by <a href="https://steveviss.github.io/">Steve Vissault</a>, <a href="https://kevcaz.github.io/">Kevin Cazelles</a>, <a href="https://github.com/gabrielbouleau">Gabriel Bergeron</a>, <a href="https://github.com/BenMerSci">Benjamin Mercier</a>, <a href="https://github.com/clementviolet">Clément Violet</a>, Dominique Gravel, <a href="https://github.com/tpoisot">Timothée Poisot</a>.</p>
 </div>
 
 <div class="pkgdown">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.3.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/">pkgdown</a> 1.4.0.</p>
 </div>
+
       </footer>
 </div>
 
   
+
 
   </body>
 </html>
