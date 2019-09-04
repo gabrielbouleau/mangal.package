@@ -117,21 +117,26 @@
 <h1 class="page-header">
 <a href="#rmangal-1-9-1-9000" class="anchor"></a>rmangal 1.9.1.9000</h1>
 <ul>
-<li>Revisions see <a href="https://github.com/ropensci/software-review/issues/332" class="uri">https://github.com/ropensci/software-review/issues/332</a>
-</li>
-<li>add summary method</li>
+<li>Revisions see <a href="https://github.com/ropensci/software-review/issues/332" class="uri">https://github.com/ropensci/software-review/issues/332</a>;</li>
+<li>add summary method [<a href='https://github.com/mangal-wg/rmangal/issues/87'>#87</a>];</li>
 <li>
-<code>mg_to_igraph</code> is now <code><a href="https://rdrr.io/pkg/igraph/man/as.igraph.html">as.igraph()</a></code>
-</li>
-<li>vignette now includes examples to use tigygraph and ggraph</li>
-<li>pkgdown website is now deployed by Travis CI</li>
+<code>mg_to_igraph</code> is now <code><a href="https://rdrr.io/pkg/igraph/man/as.igraph.html">as.igraph()</a></code>;</li>
+<li>
+<code><a href="../reference/search_references.html">search_references()</a></code> has been rewritten [<a href='https://github.com/mangal-wg/rmangal/issues/85'>#85</a>];</li>
+<li>vignette now includes examples to use <code>tigygraph</code> and <code>ggraph</code>;</li>
+<li>pkgdown website is now deployed by Travis CI;</li>
+<li>
+<code>geom</code> column has been removed from <code>mgSearchInteractions</code> objects;</li>
+<li>
+<code>sf</code> features are only used in <code><a href="../reference/search_networks.html">search_networks_sf()</a></code> and when argument <code>as_sf</code> is set to <code>TRUE</code> [#];</li>
+<li>query with spatial (<code>sf</code>) objects are handle in <code>query_networks_sf()</code> that is now exported.</li>
 </ul>
 </div>
     <div id="rmangal-1-9-1" class="section level1">
 <h1 class="page-header">
 <a href="#rmangal-1-9-1" class="anchor"></a>rmangal 1.9.1</h1>
 <ul>
-<li>Version submitted to ROpenSci</li>
+<li>Version submitted to ROpenSci for review;</li>
 <li>Added a <code>NEWS.md</code> file to track changes to the package.</li>
 </ul>
 </div>

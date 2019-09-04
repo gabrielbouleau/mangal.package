@@ -122,9 +122,9 @@ Summarize mgNetworksCollection properties." />
 <p>Summarize mgNetworksCollection properties.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_network_by_id</span>(<span class='no'>ids</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+    <pre class="usage"><span class='fu'>get_network_by_id</span>(<span class='no'>ids</span>, <span class='kw'>as_sf</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
-<span class='fu'>get_network_by_id_indiv</span>(<span class='no'>id</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
+<span class='fu'>get_network_by_id_indiv</span>(<span class='no'>id</span>, <span class='kw'>as_sf</span> <span class='kw'>=</span> <span class='fl'>FALSE</span>, <span class='kw'>verbose</span> <span class='kw'>=</span> <span class='fl'>TRUE</span>)
 
 <span class='co'># S3 method for mgNetwork</span>
 <span class='fu'><a href='https://rdrr.io/r/base/print.html'>print</a></span>(<span class='no'>x</span>, <span class='no'>...</span>)
@@ -144,6 +144,10 @@ Summarize mgNetworksCollection properties." />
     <tr>
       <th>ids</th>
       <td><p>a vector of Mangal ID for networks (<code>numeric</code>).</p></td>
+    </tr>
+    <tr>
+      <th>as_sf</th>
+      <td><p>a logical. Should networks metadata be converted into an sf object? Note that to use this feature <code>sf</code> must be installed.</p></td>
     </tr>
     <tr>
       <th>verbose</th>
@@ -169,15 +173,15 @@ Summarize mgNetworksCollection properties." />
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>A <code>mgNetwork</code> object includes:</p><ul>
-<li><p>network: a <code>list</code> of all generic information on the network</p></li>
-<li><p>nodes: a <code>data.frame</code> of all nodes with taxonomic information</p></li>
-<li><p>interactions: a <code>data.frame</code> of all ecological interactions, with the attribute used to describe the interaction</p></li>
-<li><p>dataset: <code>list</code> information pertaining to the dataset the network is associated with</p></li>
-<li><p>reference: <code>list</code> information about the original publication</p></li>
+    <p>A <code>mgNetwork</code> object includes five data frame:</p><ul>
+<li><p>network: includes all generic information on the network (if <code>as_sf=TRUE</code> then it is an object of class <code>sf</code>);</p></li>
+<li><p>nodes: information pertaining to nodes (includes taxonomic information);</p></li>
+<li><p>interactions: includes ecological interactions and their attributes;</p></li>
+<li><p>dataset: information pertaining to the original dataset;</p></li>
+<li><p>reference: details about the original publication.</p></li>
 </ul>
 
-<p>A summary method is available return for all <code>mgNetwork</code> object the following network properties:</p><ul>
+<p>A summary method is available for objects of class <code>mgNetwork</code> object and returns the following network properties:</p><ul>
 <li><p>the number of nodes;</p></li>
 <li><p>the number of edges;</p></li>
 <li><p>the connectance;</p></li>

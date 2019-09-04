@@ -206,8 +206,8 @@ For the <code>reference</code> table, those are:</p><ul>
 #&gt; [1] "2019-03-08T19:27:48.551Z"
 #&gt; 
 #&gt; $datasets
-#&gt;    id                    name                     date
-#&gt; 1 133 koslucher_minshall_1973 1969-11-01T00:00:00.000Z
+#&gt;    id                    name
+#&gt; 1 133 koslucher_minshall_1973
 #&gt;                                                                                   description
 #&gt; 1 Food web strucutre of a noterhen cool-desert stream (Deep Creek), Curlew Valley, Idaho-Utah
 #&gt;   public               created_at               updated_at ref_id user_id
@@ -215,20 +215,14 @@ For the <code>reference</code> table, those are:</p><ul>
 #&gt; 
 #&gt; $networks
 #&gt; $networks[[1]]
-#&gt; Simple feature collection with 1 feature and 10 fields (with 1 geometry empty)
-#&gt; geometry type:  POINT
-#&gt; dimension:      XY
-#&gt; bbox:           xmin: NA ymin: NA xmax: NA ymax: NA
-#&gt; epsg (SRID):    4326
-#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs
 #&gt;     id                    name                     date
 #&gt; 1 1517 koslucher_minshall_1973 1969-11-01T00:00:00.000Z
 #&gt;                                                                                   description
 #&gt; 1 Food web strucutre of a noterhen cool-desert stream (Deep Creek), Curlew Valley, Idaho-Utah
 #&gt;   public all_interactions               created_at               updated_at
 #&gt; 1   TRUE            FALSE 2019-03-08T19:27:51.061Z 2019-03-08T19:27:51.061Z
-#&gt;   dataset_id user_id        geom
-#&gt; 1        133       4 POINT EMPTY
+#&gt;   dataset_id user_id geom_type geom_lon geom_lat
+#&gt; 1        133       4      &lt;NA&gt;       NA       NA
 #&gt; 
 #&gt; 
 #&gt; attr(,"row.names")
@@ -268,8 +262,8 @@ For the <code>reference</code> table, those are:</p><ul>
 #&gt; [1] "2019-02-22T20:09:13.872Z"
 #&gt; 
 #&gt; $datasets
-#&gt;   id                  name                     date
-#&gt; 1  9 elberling_olesen_1999 1994-08-23T00:00:00.000Z
+#&gt;   id                  name
+#&gt; 1  9 elberling_olesen_1999
 #&gt;                                                   description public
 #&gt; 1 Flower-visiting insect at Mt. Latnjatjarro, northern Sweden   TRUE
 #&gt;                 created_at               updated_at ref_id user_id
@@ -277,20 +271,14 @@ For the <code>reference</code> table, those are:</p><ul>
 #&gt; 
 #&gt; $networks
 #&gt; $networks[[1]]
-#&gt; Simple feature collection with 1 feature and 10 fields
-#&gt; geometry type:  POINT
-#&gt; dimension:      XY
-#&gt; bbox:           xmin: 18.5 ymin: 68.35 xmax: 18.5 ymax: 68.35
-#&gt; epsg (SRID):    4326
-#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs
 #&gt;    id                               name                     date
 #&gt; 1 909 elberling_olesen_1999_19940823_909 1994-08-23T00:00:00.000Z
 #&gt;                                                   description public
 #&gt; 1 Flower-visiting insect at Mt. Latnjatjarro, northern Sweden   TRUE
 #&gt;   all_interactions               created_at               updated_at dataset_id
 #&gt; 1            FALSE 2019-02-24T22:21:32.444Z 2019-02-24T22:21:32.444Z          9
-#&gt;   user_id               geom
-#&gt; 1       2 POINT (18.5 68.35)
+#&gt;   user_id geom_type geom_lon geom_lat
+#&gt; 1       2     Point     18.5    68.35
 #&gt; 
 #&gt; 
 #&gt; attr(,"row.names")
@@ -349,12 +337,12 @@ For the <code>reference</code> table, those are:</p><ul>
 #&gt; [5] "2019-03-21T19:21:35.795Z"
 #&gt; 
 #&gt; $datasets
-#&gt;    id                      name                     date
-#&gt; 1  75            ricciardi_2010 2006-07-01T00:00:00.000Z
-#&gt; 2  77             angelini_2010 2010-06-01T00:00:00.000Z
-#&gt; 3 112         rayner_et_al_2010 2004-04-01T00:00:00.000Z
-#&gt; 4  86       angelini_et_al_2010 2003-05-01T00:00:00.000Z
-#&gt; 5 167 kaiser-bunbury_et_al_2010 2003-09-01T00:00:00.000Z
+#&gt;    id                      name
+#&gt; 1  75            ricciardi_2010
+#&gt; 2  77             angelini_2010
+#&gt; 3 112         rayner_et_al_2010
+#&gt; 4  86       angelini_et_al_2010
+#&gt; 5 167 kaiser-bunbury_et_al_2010
 #&gt;                                                                                       description
 #&gt; 1 structure of local anemonefish-anemone networks across the Manado region of Sulawesi, Indonesia
 #&gt; 2                                                        Food web of the Angolan fishery landings
@@ -370,13 +358,6 @@ For the <code>reference</code> table, those are:</p><ul>
 #&gt; 
 #&gt; $networks
 #&gt; $networks[[1]]
-#&gt; Simple feature collection with 16 features and 10 fields
-#&gt; geometry type:  POINT
-#&gt; dimension:      XY
-#&gt; bbox:           xmin: 124.698 ymin: 1.455 xmax: 124.864 ymax: 1.787
-#&gt; epsg (SRID):    4326
-#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs
-#&gt; First 10 features:
 #&gt;      id                         name                     date
 #&gt; 1  1071 ricciardi_2010_20060701_1071 2006-07-01T00:00:00.000Z
 #&gt; 2  1070 ricciardi_2010_20060701_1070 2006-07-01T00:00:00.000Z
@@ -388,6 +369,12 @@ For the <code>reference</code> table, those are:</p><ul>
 #&gt; 8  1078 ricciardi_2010_20060701_1078 2006-07-01T00:00:00.000Z
 #&gt; 9  1083 ricciardi_2010_20060701_1083 2006-07-01T00:00:00.000Z
 #&gt; 10 1084 ricciardi_2010_20060701_1084 2006-07-01T00:00:00.000Z
+#&gt; 11 1081 ricciardi_2010_20060701_1081 2006-07-01T00:00:00.000Z
+#&gt; 12 1082 ricciardi_2010_20060701_1082 2006-07-01T00:00:00.000Z
+#&gt; 13 1077 ricciardi_2010_20060701_1077 2006-07-01T00:00:00.000Z
+#&gt; 14 1085 ricciardi_2010_20060701_1085 2006-07-01T00:00:00.000Z
+#&gt; 15 1075 ricciardi_2010_20060701_1075 2006-07-01T00:00:00.000Z
+#&gt; 16 1076 ricciardi_2010_20060701_1076 2006-07-01T00:00:00.000Z
 #&gt;                                                                                                     description
 #&gt; 1        structure of local anemonefish-anemone networks across the Manado region of Sulawesi, Indonesia,  Bajo
 #&gt; 2      structure of local anemonefish-anemone networks across the Manado region of Sulawesi, Indonesia,  Bahowo
@@ -399,6 +386,12 @@ For the <code>reference</code> table, those are:</p><ul>
 #&gt; 8    structure of local anemonefish-anemone networks across the Manado region of Sulawesi, Indonesia,  Likuan 1
 #&gt; 9     structure of local anemonefish-anemone networks across the Manado region of Sulawesi, Indonesia,  T. Kopi
 #&gt; 10   structure of local anemonefish-anemone networks across the Manado region of Sulawesi, Indonesia,  T. Pisok
+#&gt; 11       structure of local anemonefish-anemone networks across the Manado region of Sulawesi, Indonesia,  Mike
+#&gt; 12    structure of local anemonefish-anemone networks across the Manado region of Sulawesi, Indonesia,  Sachiko
+#&gt; 13  structure of local anemonefish-anemone networks across the Manado region of Sulawesi, Indonesia,  Kasegaran
+#&gt; 14      structure of local anemonefish-anemone networks across the Manado region of Sulawesi, Indonesia,  Timur
+#&gt; 15   structure of local anemonefish-anemone networks across the Manado region of Sulawesi, Indonesia,  Jalan m.
+#&gt; 16    structure of local anemonefish-anemone networks across the Manado region of Sulawesi, Indonesia,  Johnson
 #&gt;    public all_interactions               created_at               updated_at
 #&gt; 1    TRUE            FALSE 2019-02-26T20:12:57.710Z 2019-02-26T20:12:57.710Z
 #&gt; 2    TRUE            FALSE 2019-02-26T20:12:52.618Z 2019-02-26T20:12:52.618Z
@@ -410,74 +403,65 @@ For the <code>reference</code> table, those are:</p><ul>
 #&gt; 8    TRUE            FALSE 2019-02-26T20:13:18.623Z 2019-02-26T20:13:18.623Z
 #&gt; 9    TRUE            FALSE 2019-02-26T20:13:36.429Z 2019-02-26T20:13:36.429Z
 #&gt; 10   TRUE            FALSE 2019-02-26T20:13:39.735Z 2019-02-26T20:13:39.735Z
-#&gt;    dataset_id user_id                  geom
-#&gt; 1          75       2 POINT (124.778 1.787)
-#&gt; 2          75       2 POINT (124.819 1.585)
-#&gt; 3          75       2 POINT (124.704 1.616)
-#&gt; 4          75       2 POINT (124.793 1.767)
-#&gt; 5          75       2 POINT (124.735 1.608)
-#&gt; 6          75       2 POINT (124.744 1.455)
-#&gt; 7          75       2 POINT (124.752 1.606)
-#&gt; 8          75       2 POINT (124.773 1.594)
-#&gt; 9          75       2 POINT (124.698 1.651)
-#&gt; 10         75       2 POINT (124.792 1.578)
+#&gt; 11   TRUE            FALSE 2019-02-26T20:13:28.721Z 2019-02-26T20:13:28.721Z
+#&gt; 12   TRUE            FALSE 2019-02-26T20:13:31.516Z 2019-02-26T20:13:31.516Z
+#&gt; 13   TRUE            FALSE 2019-02-26T20:13:15.768Z 2019-02-26T20:13:15.768Z
+#&gt; 14   TRUE            FALSE 2019-02-26T20:13:44.536Z 2019-02-26T20:13:44.536Z
+#&gt; 15   TRUE            FALSE 2019-02-26T20:13:09.431Z 2019-02-26T20:13:09.431Z
+#&gt; 16   TRUE            FALSE 2019-02-26T20:13:13.923Z 2019-02-26T20:13:13.923Z
+#&gt;    dataset_id user_id geom_type geom_lon geom_lat
+#&gt; 1          75       2     Point  124.778    1.787
+#&gt; 2          75       2     Point  124.819    1.585
+#&gt; 3          75       2     Point  124.704    1.616
+#&gt; 4          75       2     Point  124.793    1.767
+#&gt; 5          75       2     Point  124.735    1.608
+#&gt; 6          75       2     Point  124.744    1.455
+#&gt; 7          75       2     Point  124.752    1.606
+#&gt; 8          75       2     Point  124.773    1.594
+#&gt; 9          75       2     Point  124.698    1.651
+#&gt; 10         75       2     Point  124.792    1.578
+#&gt; 11         75       2     Point  124.743    1.639
+#&gt; 12         75       2     Point  124.768     1.63
+#&gt; 13         75       2     Point  124.793    1.464
+#&gt; 14         75       2     Point  124.786    1.612
+#&gt; 15         75       2     Point  124.756    1.616
+#&gt; 16         75       2     Point  124.864    1.608
 #&gt; 
 #&gt; $networks[[2]]
-#&gt; Simple feature collection with 1 feature and 10 fields
-#&gt; geometry type:  POLYGON
-#&gt; dimension:      XY
-#&gt; bbox:           xmin: 10.70068 ymin: -17.25 xmax: 13.60107 ymax: -5
-#&gt; epsg (SRID):    4326
-#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs
 #&gt;     id                        name                     date
 #&gt; 1 1101 angelini_2010_20100601_1101 2010-06-01T00:00:00.000Z
 #&gt;                                description public all_interactions
 #&gt; 1 Food web of the Angolan fishery landings   TRUE            FALSE
 #&gt;                 created_at               updated_at dataset_id user_id
 #&gt; 1 2019-02-26T21:19:01.124Z 2019-02-26T21:19:01.124Z         77       3
-#&gt;                             geom
-#&gt; 1 POLYGON ((10.95337 -17.25, ...
+#&gt;   geom_type
+#&gt; 1   Polygon
+#&gt;                                                                                   geom_lon
+#&gt; 1 10.95337, 11.62354, 11.64551, 12.12891, 13.60107, 11.95312, 10.70068, 10.95337, 10.95337
+#&gt;                                                                                          geom_lat
+#&gt; 1 -17.25000, -17.25000, -15.53838, -13.96605, -11.13529, -5.00000, -5.00000, -17.25000, -17.25000
 #&gt; 
 #&gt; $networks[[3]]
-#&gt; Simple feature collection with 1 feature and 10 fields
-#&gt; geometry type:  POINT
-#&gt; dimension:      XY
-#&gt; bbox:           xmin: 145.8646 ymin: -17.12026 xmax: 145.8646 ymax: -17.12026
-#&gt; epsg (SRID):    4326
-#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs
 #&gt;     id                            name                     date
 #&gt; 1 1488 rayner_et_al_2010_20040401_1488 2004-04-01T00:00:00.000Z
 #&gt;                                                            description public
 #&gt; 1 Food web structure of a wet Tropic river (Mulgrave River), Australia   TRUE
 #&gt;   all_interactions               created_at               updated_at dataset_id
 #&gt; 1            FALSE 2019-03-06T14:49:45.109Z 2019-03-06T14:49:45.109Z        112
-#&gt;   user_id                       geom
-#&gt; 1       4 POINT (145.8646 -17.12026)
+#&gt;   user_id geom_type geom_lon  geom_lat
+#&gt; 1       4     Point 145.8646 -17.12026
 #&gt; 
 #&gt; $networks[[4]]
-#&gt; Simple feature collection with 1 feature and 10 fields
-#&gt; geometry type:  POINT
-#&gt; dimension:      XY
-#&gt; bbox:           xmin: -52.0155 ymin: -18.56476 xmax: -52.0155 ymax: -18.56476
-#&gt; epsg (SRID):    4326
-#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs
 #&gt;     id                              name                     date
 #&gt; 1 1448 angelini_et_al_2010_20030501_1448 2003-05-01T00:00:00.000Z
 #&gt;                                                                       description
 #&gt; 1 Interaction of a mixed food web in the Corrente River in the Paraná River Basin
 #&gt;   public all_interactions               created_at               updated_at
 #&gt; 1   TRUE            FALSE 2019-02-28T17:26:47.593Z 2019-02-28T17:26:47.593Z
-#&gt;   dataset_id user_id                       geom
-#&gt; 1         86       4 POINT (-52.0155 -18.56476)
+#&gt;   dataset_id user_id geom_type geom_lon  geom_lat
+#&gt; 1         86       4     Point -52.0155 -18.56476
 #&gt; 
 #&gt; $networks[[5]]
-#&gt; Simple feature collection with 24 features and 10 fields
-#&gt; geometry type:  POINT
-#&gt; dimension:      XY
-#&gt; bbox:           xmin: 57.45094 ymin: -20.42637 xmax: 57.45094 ymax: -20.42637
-#&gt; epsg (SRID):    4326
-#&gt; proj4string:    +proj=longlat +datum=WGS84 +no_defs
-#&gt; First 10 features:
 #&gt;      id                         name                     date
 #&gt; 1  1599  kaiser-bunbury_et_al_2010_1 2003-09-01T00:00:00.000Z
 #&gt; 2  1600  kaiser-bunbury_et_al_2010_2 2003-09-01T00:00:00.000Z
@@ -489,6 +473,20 @@ For the <code>reference</code> table, those are:</p><ul>
 #&gt; 8  1606  kaiser-bunbury_et_al_2010_8 2003-09-01T00:00:00.000Z
 #&gt; 9  1607  kaiser-bunbury_et_al_2010_9 2003-09-01T00:00:00.000Z
 #&gt; 10 1608 kaiser-bunbury_et_al_2010_10 2003-09-01T00:00:00.000Z
+#&gt; 11 1609 kaiser-bunbury_et_al_2010_11 2003-09-01T00:00:00.000Z
+#&gt; 12 1610 kaiser-bunbury_et_al_2010_12 2003-09-01T00:00:00.000Z
+#&gt; 13 1611 kaiser-bunbury_et_al_2010_13 2003-09-01T00:00:00.000Z
+#&gt; 14 1612 kaiser-bunbury_et_al_2010_14 2003-09-01T00:00:00.000Z
+#&gt; 15 1613 kaiser-bunbury_et_al_2010_15 2003-09-01T00:00:00.000Z
+#&gt; 16 1614 kaiser-bunbury_et_al_2010_16 2003-09-01T00:00:00.000Z
+#&gt; 17 1615 kaiser-bunbury_et_al_2010_17 2003-09-01T00:00:00.000Z
+#&gt; 18 1616 kaiser-bunbury_et_al_2010_18 2003-09-01T00:00:00.000Z
+#&gt; 19 1617 kaiser-bunbury_et_al_2010_19 2003-09-01T00:00:00.000Z
+#&gt; 20 1618 kaiser-bunbury_et_al_2010_20 2003-09-01T00:00:00.000Z
+#&gt; 21 1619 kaiser-bunbury_et_al_2010_21 2003-09-01T00:00:00.000Z
+#&gt; 22 1620 kaiser-bunbury_et_al_2010_22 2003-09-01T00:00:00.000Z
+#&gt; 23 1621 kaiser-bunbury_et_al_2010_23 2003-09-01T00:00:00.000Z
+#&gt; 24 1622 kaiser-bunbury_et_al_2010_24 2003-09-01T00:00:00.000Z
 #&gt;                                                                            description
 #&gt; 1  Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
 #&gt; 2  Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
@@ -500,6 +498,20 @@ For the <code>reference</code> table, those are:</p><ul>
 #&gt; 8  Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
 #&gt; 9  Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
 #&gt; 10 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
+#&gt; 11 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
+#&gt; 12 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
+#&gt; 13 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
+#&gt; 14 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
+#&gt; 15 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
+#&gt; 16 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
+#&gt; 17 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
+#&gt; 18 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
+#&gt; 19 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
+#&gt; 20 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
+#&gt; 21 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
+#&gt; 22 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
+#&gt; 23 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
+#&gt; 24 Plant-pollinator system at two sites in Black River Gorges National Park, Mauritius
 #&gt;    public all_interactions               created_at               updated_at
 #&gt; 1    TRUE            FALSE 2019-03-21T19:23:49.316Z 2019-03-21T19:23:49.316Z
 #&gt; 2    TRUE            FALSE 2019-03-21T19:24:08.441Z 2019-03-21T19:24:08.441Z
@@ -511,17 +523,45 @@ For the <code>reference</code> table, those are:</p><ul>
 #&gt; 8    TRUE            FALSE 2019-03-21T19:26:47.151Z 2019-03-21T19:26:47.151Z
 #&gt; 9    TRUE            FALSE 2019-03-21T19:27:05.322Z 2019-03-21T19:27:05.322Z
 #&gt; 10   TRUE            FALSE 2019-03-21T19:27:21.613Z 2019-03-21T19:27:21.613Z
-#&gt;    dataset_id user_id                       geom
-#&gt; 1         167       4 POINT (57.45094 -20.42637)
-#&gt; 2         167       4 POINT (57.45094 -20.42637)
-#&gt; 3         167       4 POINT (57.45094 -20.42637)
-#&gt; 4         167       4 POINT (57.45094 -20.42637)
-#&gt; 5         167       4 POINT (57.45094 -20.42637)
-#&gt; 6         167       4 POINT (57.45094 -20.42637)
-#&gt; 7         167       4 POINT (57.45094 -20.42637)
-#&gt; 8         167       4 POINT (57.45094 -20.42637)
-#&gt; 9         167       4 POINT (57.45094 -20.42637)
-#&gt; 10        167       4 POINT (57.45094 -20.42637)
+#&gt; 11   TRUE            FALSE 2019-03-21T19:27:32.137Z 2019-03-21T19:27:32.137Z
+#&gt; 12   TRUE            FALSE 2019-03-21T19:27:41.446Z 2019-03-21T19:27:41.446Z
+#&gt; 13   TRUE            FALSE 2019-03-21T19:27:53.533Z 2019-03-21T19:27:53.533Z
+#&gt; 14   TRUE            FALSE 2019-03-21T19:28:03.939Z 2019-03-21T19:28:03.939Z
+#&gt; 15   TRUE            FALSE 2019-03-21T19:28:22.521Z 2019-03-21T19:28:22.521Z
+#&gt; 16   TRUE            FALSE 2019-03-21T19:28:47.688Z 2019-03-21T19:28:47.688Z
+#&gt; 17   TRUE            FALSE 2019-03-21T19:29:08.673Z 2019-03-21T19:29:08.673Z
+#&gt; 18   TRUE            FALSE 2019-03-21T19:29:27.829Z 2019-03-21T19:29:27.829Z
+#&gt; 19   TRUE            FALSE 2019-03-21T19:29:42.942Z 2019-03-21T19:29:42.942Z
+#&gt; 20   TRUE            FALSE 2019-03-21T19:29:51.654Z 2019-03-21T19:29:51.654Z
+#&gt; 21   TRUE            FALSE 2019-03-21T19:29:59.208Z 2019-03-21T19:29:59.208Z
+#&gt; 22   TRUE            FALSE 2019-03-21T19:30:06.009Z 2019-03-21T19:30:06.009Z
+#&gt; 23   TRUE            FALSE 2019-03-21T19:30:18.766Z 2019-03-21T19:30:18.766Z
+#&gt; 24   TRUE            FALSE 2019-03-21T19:30:30.248Z 2019-03-21T19:30:30.248Z
+#&gt;    dataset_id user_id geom_type geom_lon  geom_lat
+#&gt; 1         167       4     Point 57.45094 -20.42637
+#&gt; 2         167       4     Point 57.45094 -20.42637
+#&gt; 3         167       4     Point 57.45094 -20.42637
+#&gt; 4         167       4     Point 57.45094 -20.42637
+#&gt; 5         167       4     Point 57.45094 -20.42637
+#&gt; 6         167       4     Point 57.45094 -20.42637
+#&gt; 7         167       4     Point 57.45094 -20.42637
+#&gt; 8         167       4     Point 57.45094 -20.42637
+#&gt; 9         167       4     Point 57.45094 -20.42637
+#&gt; 10        167       4     Point 57.45094 -20.42637
+#&gt; 11        167       4     Point 57.45094 -20.42637
+#&gt; 12        167       4     Point 57.45094 -20.42637
+#&gt; 13        167       4     Point 57.45094 -20.42637
+#&gt; 14        167       4     Point 57.45094 -20.42637
+#&gt; 15        167       4     Point 57.45094 -20.42637
+#&gt; 16        167       4     Point 57.45094 -20.42637
+#&gt; 17        167       4     Point 57.45094 -20.42637
+#&gt; 18        167       4     Point 57.45094 -20.42637
+#&gt; 19        167       4     Point 57.45094 -20.42637
+#&gt; 20        167       4     Point 57.45094 -20.42637
+#&gt; 21        167       4     Point 57.45094 -20.42637
+#&gt; 22        167       4     Point 57.45094 -20.42637
+#&gt; 23        167       4     Point 57.45094 -20.42637
+#&gt; 24        167       4     Point 57.45094 -20.42637
 #&gt; 
 #&gt; 
 #&gt; attr(,"row.names")
