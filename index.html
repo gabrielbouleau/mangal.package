@@ -87,14 +87,14 @@
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
 <p>So far, only the development version is available and can be installed via the <a href="https://CRAN.R-project.org/package=remotes">remotes</a> 📦</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span>remotes<span class="op">::</span><span class="kw"><a href="https://rdrr.io/pkg/remotes/man/install_github.html">install_github</a></span>(<span class="st">"ropensci/rmangal"</span>)</a>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span>remotes<span class="op">::</span><span class="kw"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"ropensci/rmangal"</span>)</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"rmangal"</span>)</a></code></pre></div>
 </div>
 <div id="how-to-use-rmangal" class="section level2">
 <h2 class="hasAnchor">
 <a href="#how-to-use-rmangal" class="anchor"></a>How to use <code>rmangal</code>
 </h2>
-<p>There are <a href="https://mangal.io/doc/r/reference/index.html#section-explore-database">seven <code>search_*()</code> functions</a> to explore the content of Mangal, for instance <code><a href="reference/search_datasets.html">search_datasets()</a></code>:</p>
+<p>There are <a href="https://docs.ropensci.org/rmangal/reference/index.html#section-explore-database">seven <code>search_*()</code> functions</a> to explore the content of Mangal, for instance <code><a href="reference/search_datasets.html">search_datasets()</a></code>:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">R<span class="op">&gt;</span><span class="st"> </span>mgs &lt;-<span class="st"> </span><span class="kw"><a href="reference/search_datasets.html">search_datasets</a></span>(<span class="st">"lagoon"</span>)</a>
 <a class="sourceLine" id="cb2-2" data-line-number="2">Found <span class="dv">2</span> datasets</a></code></pre></div>
 <p>Once this first step achieved, networks found can be retrieved with the <code><a href="reference/get_collection.html">get_collection()</a></code> function.</p>
@@ -133,7 +133,7 @@
 <a class="sourceLine" id="cb5-5" data-line-number="5">R<span class="op">&gt;</span><span class="st"> </span>tg &lt;-<span class="st"> </span><span class="kw">as_tbl_graph</span>(mgn[[<span class="dv">1</span>]])</a>
 <a class="sourceLine" id="cb5-6" data-line-number="6">R<span class="op">&gt;</span><span class="st"> </span><span class="kw"><a href="https://rdrr.io/r/base/class.html">class</a></span>(tg)</a>
 <a class="sourceLine" id="cb5-7" data-line-number="7">[<span class="dv">1</span>] <span class="st">"tbl_graph"</span> <span class="st">"igraph"</span></a></code></pre></div>
-<p>📖 Note that the vignette <a href="https://mangal.io/doc/r/articles/rmangal.html">“Get started with rmangal”</a> will guide the reader through several examples and provide further details about <strong>rmangal</strong> features.</p>
+<p>📖 Note that the vignette <a href="https://docs.ropensci.org/rmangal/articles/rmangal.html">“Get started with rmangal”</a> will guide the reader through several examples and provide further details about <strong>rmangal</strong> features.</p>
 </div>
 <div id="how-to-publish-ecological-networks" class="section level2">
 <h2 class="hasAnchor">
